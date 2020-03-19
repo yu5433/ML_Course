@@ -48,11 +48,36 @@ def ml_loop():
         if not ball_served:
             comm.send_instruction(scene_info.frame, PlatformAction.SERVE_TO_LEFT)
             ball_served = True
+            hit = False
+            expect_x = 0
         else:
             ball_x = scene_info.ball[0]
-            plat_x = scene_info.Platform[0]
-            if ball_x > plat_x:
-                comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
-            else:
-                comm.send_instruction(scene_info.frame, PlatformAction.MOVE_LEFT)
+            plat_x = scene_info.platform[0]
+            ball_y = scene_info.ball[1]
+            plat_y = scene_info.platform[1]
+            if ball_x == 0:
+                print('ball:' , ball_y)
+                if ball_y > 200:
+                    expect_x = 400 - ball_y
+                else:
+                    expect_x = ball_y
+                print('expect:', expect_x)
 
+            if ball_x == 195:
+                print('right')
+                print('ball:' , ball_y)
+                if ball_y > 200:
+                    expect_x = 200 - 400 + ball_y
+                else:
+                    expect_x = 400 - ball_y -200
+                print('expect:', expect_x)
+                    
+            if expect_x != 0:
+                if (plat_x < expect_x) and (plat_x+35 > expect_x):
+                    comm.send_instruction(scene_info.frame, PlatformAction.NONE)
+                elif plat_x > expect_x:
+                    comm.send_instruction(scene_info.frame, PlatformAction.MOVE_LEFT)
+                else:
+                    comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
+
+            
