@@ -73,7 +73,7 @@ def ml_loop():
                 print('expect:', expect_x)
                     
             if expect_x != 0:
-                if (plat_x < expect_x) and (plat_x+35 > expect_x):
+                if ((plat_x -5)< expect_x) and (plat_x+35 > expect_x):
                     comm.send_instruction(scene_info.frame, PlatformAction.NONE)
                 elif plat_x > expect_x:
                     comm.send_instruction(scene_info.frame, PlatformAction.MOVE_LEFT)
