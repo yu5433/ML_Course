@@ -71,7 +71,7 @@ def ml_loop():
                 else:
                     expect_x = 400 - ball_y -200
                 print('expect:', expect_x)
-"""
+
             if expect_x != 0:
                 if ((plat_x -5)< expect_x) and (plat_x+35 > expect_x):
                     comm.send_instruction(scene_info.frame, PlatformAction.NONE)
@@ -80,4 +80,3 @@ def ml_loop():
                 else:
                     comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
 
-"""
