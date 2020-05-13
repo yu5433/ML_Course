@@ -36,7 +36,7 @@ def ml_loop(side: str):
             clf = pickle.load(file)
     """
 
-    filename = path.join(path.dirname(__file__),'save', 'player1_4.pickle')
+    filename = "player1_4.pickle"
         #filename = "MLGame-master\games\pingpong\save\player1.pickle"
     with open(filename, 'rb') as file:
         clf = pickle.load(file)
