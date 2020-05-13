@@ -81,7 +81,7 @@ def ml_loop(side: str):
         s = [vector[0], vector[1]]
         feature = np.array(feature)
         feature = feature.reshape((-1,4))
-        print(feature)
+        #print(feature)
         #print(feature)
         # 3.2. If either of two sides wins the game, do the updating or
         #      resetting stuff and inform the game process when the ml process
