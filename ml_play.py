@@ -142,32 +142,32 @@ class MLPlay:
                             if self.car_vel < speed_ahead:
                                 return ["SPEED", "MOVE_LEFT"]
                             else:
-                                return ["BRAKE", "MOVE_LEFT"]
+                                return [ "MOVE_LEFT"]
                         elif (1 in grid) and (4 not in grid):
                             if self.car_vel < speed_ahead:
                                 return ["SPEED", "MOVE_RIGHT"]
                             else:
-                                return ["BRAKE", "MOVE_RIGHT"]
+                                return ["MOVE_RIGHT"]
                         elif (1 in grid) and (10 not in grid):
                             if self.car_vel < speed_ahead:
                                 return ["SPEED", "MOVE_LEFT"]
                             else:
-                                return ["BRAKE", "MOVE_LEFT"]
+                                return [ "MOVE_LEFT"]
                         elif (3 in grid) and (12 not in grid):
                             if self.car_vel < speed_ahead:
                                 return ["SPEED", "MOVE_RIGHT"]
                             else:
-                                return ["BRAKE", "MOVE_RIGHT"]
+                                return ["MOVE_RIGHT"]
                         elif (4 not in grid) and (1 not in grid): # turn left    and (7 not in grid) 
                             if self.car_vel < speed_ahead:
                                 return ["SPEED", "MOVE_LEFT"]
                             else:
-                                return ["BRAKE", "MOVE_LEFT"]
+                                return [ "MOVE_LEFT"]
                         elif (6 not in grid) and (3 not in grid) and (12 not in grid): # turn right   and (9 not in grid)
                             if self.car_vel < speed_ahead:
                                 return ["SPEED", "MOVE_RIGHT"]
                             else:
-                                return ["BRAKE", "MOVE_RIGHT"]
+                                return ["MOVE_RIGHT"]
                         else : 
                             if self.car_vel < speed_ahead:  # BRAKE
                                 return ["SPEED"]
