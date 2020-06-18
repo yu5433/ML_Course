@@ -212,13 +212,12 @@ class MLPlay:
                             return ["SPEED", "MOVE_LEFT"]
                         else:
                             return ["MOVE_LEFT"]
-                    elif (3 not in grid) and (6 not in grid): # turn right
-                        return ["SPEED", "MOVE_RIGHT"]
-                    elif (self.car_pos[0] < 30 ):
+                    elif (3 not in grid) and (6 not in grid) and (9 not in grid): # turn right
                         return ["SPEED", "MOVE_RIGHT"]
                     elif (1 not in grid) and (4 not in grid) and (7 not in grid): # turn left 
                         return ["SPEED", "MOVE_LEFT"]
-                    
+                    elif (3 not in grid) and (6 not in grid): # turn right
+                        return ["SPEED", "MOVE_RIGHT"]
                     elif (1 not in grid) and (4 not in grid): # turn left 
                         return ["SPEED", "MOVE_LEFT"]
                     # if (4 not in grid) and (7 not in grid): # turn left 
